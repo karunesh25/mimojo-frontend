@@ -1,0 +1,51 @@
+<div class="panel-header panel-header-sm">
+</div>
+<div class="main-content">
+  <div class="row">
+    <div class="col-md-12">
+      <div class="card">
+        <div class="card-header">
+          <h4 class="card-title"> Payment History</h4>
+        </div>
+        <div class="card-body">
+          <div class="table-responsive">
+            <table class="table">
+              <thead class=" text-primary">
+                <th>
+                  Transaction Date
+                </th>
+                <th>
+                  Card Number
+                </th>
+                <th>
+                  Amount
+                </th>
+                <th class="text-right">
+                  Currency
+                </th>
+              </thead>
+              <tbody>
+                <tr *ngFor="let item of paymentHistory">
+                  <td>
+                    {{item["payment"]["date"]}}
+                  </td>
+                  <td>
+                    **********{{item["payment"]["cardLast4"]}}
+                  </td>
+                  <td>
+                    {{item["payment"]["amount"]}}
+                  </td>
+                  <td class="text-right">
+                    {{item["payment"]["currency"]}}
+                  </td>
+                </tr>
+
+              </tbody>
+            </table>
+          </div>
+        </div>
+      </div>
+    </div>
+
+  </div>
+</div>

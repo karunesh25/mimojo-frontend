@@ -1,0 +1,159 @@
+<div class="panel-header panel-header-sm">
+</div>
+<div class="main-content">
+  <div class="row">
+    <div class="col-md-8">
+      <div class="card">
+        <div class="card-header">
+          <h5 class="title">User Profile</h5>
+        </div>
+
+        <div class="card-header">
+          <h6 class="title">Pesonal Details</h6>
+        </div>
+        <div class="card-body">
+          <form>
+            <div class="row">
+              <div class="col-md-5 pr-1">
+                <div class="form-group">
+                  <label>UserName (disabled)</label>
+                  <input type="text" class="form-control" disabled="" placeholder="UserName" value="{{username}}">
+                </div>
+              </div>
+              <div class="col-md-4 pl-1">
+                <div class="form-group">
+                  <label for="email">Email address (disabled)</label>
+                  <input name="email" id="email" disabled="" type="email" class="form-control" placeholder="Email" value="{{email}}">
+                </div>
+              </div>
+            </div>
+            <div class="row">
+              <div class="col-md-6 pr-1">
+                <div class="form-group">
+                  <label>Name</label>
+                  <input type="text" class="form-control" placeholder="Name" value="{{name}}">
+                </div>
+              </div>
+              <div class="col-md-6 pl-1">
+                <div class="form-group">
+                  <label>Mobile</label>
+                  <input type="text" class="form-control" placeholder="Last Name" value="{{mobile}}">
+                </div>
+              </div>
+            </div>
+            <div class="row">
+              <div class="col-md-12">
+                <div class="form-group">
+                  <label>Address</label>
+                  <input type="text" class="form-control" placeholder="Home Address" value="{{address}}">
+                </div>
+              </div>
+            </div>
+            <div class="row">
+              <div class="col-md-4 pr-1">
+                <div class="form-group">
+                  <label>Country</label>
+                  <input type="text" class="form-control" placeholder="Country" value="{{country}}">
+                </div>
+              </div>
+              <div class="col-md-4 pr-1">
+                <div class="form-group">
+                  <label>City</label>
+                  <input type="text" class="form-control" placeholder="City" value="{{city}}">
+                </div>
+              </div>
+            </div>
+
+          </form>
+        </div>
+
+        <div class="card-header">
+          <h6 class="title">Subscription Details</h6>
+        </div>
+        <div class="card-body">
+          <form>
+            <div class="row">
+              <div class="col-md-5 pr-1">
+                <div class="form-group">
+                  <label>Subscription (disabled)</label>
+                  <input name = "subscription" type="text" class="form-control" disabled="" placeholder="subscription" value="{{subscription}}">
+                </div>
+              </div>
+              <div class="col-md-4 pr-1">
+                <div class="form-group">
+                  <label for="purchasedate">Purchase Date (disabled)</label>
+                  <input name="purchasedate" id="purchasedate" disabled="" type="text" class="form-control" placeholder="purchasedate" value="{{purchasedate}}">
+                </div>
+              </div>
+              <div class="col-md-4 pr-1">
+                <div class="form-group">
+                  <label for="expirydate">Expiry Date (disabled)</label>
+                  <input name="expirydate" id="expirydate" disabled="" type="text" class="form-control" placeholder="expirydate" value="{{expirydate}}">
+                </div>
+              </div>
+            </div>
+            <div class="row">
+              <div class="col-md-5 pr-1">
+                <div class="form-group">
+                  <label>Add country in weather dashboard</label>
+                  <select  class="form-control" #teams (change)="onSelected(teams.value)">
+                    <option *ngFor="let item of countries" value={{item.country}}>
+                      {{item.country}}
+                </select>
+                </div>
+              </div>
+              <div class="col-md-3 pl-1">
+                <div class="form-group">
+                  <label></label>
+                  <button class="btn btn-primary btn-block" (click)="onUserCountrySave()">
+                    Add
+                  </button>
+                </div>
+              </div>
+            </div>
+          </form>
+        </div>
+
+        <div class="card-header">
+          <h6 class="title">Payment Details</h6>
+        </div>
+        <div class="card-body">
+          <form>
+            <div class="row">
+              <div class="col-md-5 pr-1">
+                <div class="form-group">
+                  <label>Card Number</label>
+                  <input type="text" class="form-control" placeholder="card number" value="{{cardnumber}}">
+                </div>
+              </div>
+              <div class="col-md-4 pl-1">
+                <div class="form-group">
+                  <label>Holder Name</label>
+                  <input type="text" class="form-control" placeholder="holder name" value="{{cardholdername}}">
+                </div>
+              </div>
+            </div>
+            <div class="row">
+              <div class="col-md-6 pr-1">
+                <div class="form-group">
+                  <label>Card Expiry</label>
+                  <input type="text" class="form-control" placeholder="expiry" value="{{cardexpiry}}">
+                </div>
+              </div>
+              <div class="col-md-6 pl-1">
+                <div class="form-group">
+                  <label>CVV</label>
+                  <input type="password" class="form-control" placeholder="CVV" value="***">
+                </div>
+              </div>
+            </div>
+
+          </form>
+        </div>
+
+
+      </div>
+    </div>
+
+  </div>
+</div>

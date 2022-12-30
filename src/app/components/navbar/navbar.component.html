@@ -1,0 +1,37 @@
+
+<nav class="navbar navbar-expand-lg navbar-transparent  navbar-absolute bg-primary fixed-top">
+    <div class="container-fluid">
+        <div class="navbar-wrapper">
+
+            <a class="navbar-brand" href="#pablo">{{getTitle()}}</a>
+        </div>
+
+        <div class="collapse navbar-collapse justify-content-end" id="collapseExample" [ngbCollapse]="isCollapsed">
+
+          <ul class="navbar-nav">
+
+            <li class="nav-item" ngbDropdown>
+              <a class="nav-link" id="dropdownBasic1" ngbDropdownToggle>
+                <i class="now-ui-icons location_world"></i>
+                <p>
+                  <span class="d-lg-none d-md-block">Some Actions</span>
+                </p>
+              </a>
+              <ng-container *ngIf="isLoggedId; then loggedIn; else loggedOut"></ng-container>
+              <ng-template #loggedIn>
+               <div  class="dropdown-menu dropdown-menu-right" ngbDropdownMenu aria-labelledby="dropdownBasic1">
+                <a class="dropdown-item" href="/login" (click)="onLogOut()">LogOut - {{loginUser}}</a>
+               </div>              
+              </ng-template>
+              <ng-template #loggedOut>
+                <div  class="dropdown-menu dropdown-menu-right" ngbDropdownMenu aria-labelledby="dropdownBasic1">
+                 <a class="dropdown-item" href="/login">Login</a>
+                 <a class="dropdown-item" href="/register">Register</a>
+                </div>              
+               </ng-template>
+            </li>
+
+          </ul>
+        </div>
+    </div>
+</nav>
